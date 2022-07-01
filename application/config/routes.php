@@ -1,6 +1,53 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// $route['default_controller'] = 'welcome';
+$route['default_controller'] = 'view_controller/home_fc';
+$route['(:num)'] = 'view_controller/search_pincode_fc'; 
+
+$route['find'] = 'view_controller/search_by_place_fc';
+$route['state_entered'] = 'view_controller/state_entered';
+
+$route['(:any)'] = 'view_controller/state_in_url_fc'; 
+$route['(:any)/district_entered'] = 'view_controller/district_entered';
+$route['(:any)/(:any)'] = 'view_controller/district_in_url_fc';
+$route['(:any)/(:any)/po_entered'] = 'view_controller/po_entered';
+$route['(:any)/(:any)/(:any)'] = 'view_controller/po_in_url_fc';
+
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -49,8 +96,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-// $route['default_controller'] = 'welcome';
-$route['default_controller'] = 'view_controller/home_fc';
-$route['(:num)'] = 'view_controller/search_pincode_fc'; 
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+

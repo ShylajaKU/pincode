@@ -21,8 +21,23 @@ public function get_specific_rows_fm($value,$value_col_name,$table_name){
     return $result = $query->result_array();
 }
 // ------------------------------------------------------
+public function get_selected_data_fm($table_name,$select){
+    $this->db->select($select);
+    return $this->db->get($table_name)->result_array();
+}
 // ------------------------------------------------------
+public function get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name){
+    $this->db->from($table_name);
+    $this->db->where($known_value_col_name,$known_value);
+    $this->db->select($op_value_col_name);
+    $result = $this->db->get()->result_array()[0][$op_value_col_name];
+    return $result;
+}
 // ------------------------------------------------------
+public function get_row_fm($table_name,$known_value,$known_value_col_name){
+    $this->db->where($known_value_col_name,$known_value);
+    return $this->db->get($table_name)->result_array();
+}
 // ------------------------------------------------------
 // ------------------------------------------------------
 // ------------------------------------------------------

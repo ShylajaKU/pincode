@@ -50,7 +50,9 @@
         echo 'State : ' .ucwords(strtolower($row['statename'])) .'<br>';
         echo 'Country : India'.'<br>';
         if($row['Telephone'] != 'NA'){
-        echo 'Post Office Tel : ' .$row['Telephone'] .'<br>';
+        echo 'Post Office Tel : '; ?>
+        <a href="tel:<?= $row['Telephone']?>"><?= $row['Telephone']?></a>  <br>
+        <?php 
         }
         if($row['longitude'] != 'NA'){
             echo 'Longitude : ' .$row['longitude'] .'<br>';
