@@ -62,7 +62,10 @@
           <a class="nav-link active" href="<?= base_url('search-by-place')?>">Search by Place</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+          <a class="nav-link" href="<?= base_url('contact')?>">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('privacy-policy')?>">Privacy Policy</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -71,6 +74,5 @@
     </div>
   </div>
 </nav>
-<br><br>
+<br>
 
-<?php $this->meta_model->meta_fm(); ?>

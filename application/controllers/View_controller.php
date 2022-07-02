@@ -4,6 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class View_controller extends CI_Controller {
 
 //--------------------------------------------------
+public function contact_fc(){
+    $this->load->view('home/header');
+    $this->load->view('contact/contact');
+    $this->load->view('home/footer');
+}
+//--------------------------------------------------
+public function privacy_policy_fc(){
+    $this->load->view('home/header');
+    $this->load->view('privacy/privacy_policy');
+    $this->load->view('home/footer');
+}//--------------------------------------------------
 public function home_fc(){
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
