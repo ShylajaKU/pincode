@@ -71,13 +71,13 @@
 
 <!-- The button used to copy the text -->
 <style>
-    @media (min-width: 400px) {
+    @media (max-width: 500px) {
     #button-pc {
-        display: none;
+        visibility: hidden;
     }
 }
 </style>
-<button class="ip-button bord" id="button-pc" onclick="myFunction()">Copy</button>
+<button class="ip-button bord" id="button-pc"  onclick="myFunction()">Copy</button>
 
 </div>
 <br><hr style="width:50vw ; margin:auto;"><br>
