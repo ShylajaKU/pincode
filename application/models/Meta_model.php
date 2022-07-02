@@ -206,7 +206,7 @@ $data = array(
     'meta_desc_len' => $meta_desc_length,
 );
 
-$this->db->where('segment_1',$pincode);
+$this->db->where('sl_no',$sl_no);
 $this->db->update('meta',$data);
 
 
