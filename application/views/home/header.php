@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <?php 
-    // $this->meta_model->meta_fm();
+    $this->meta_model->meta_fm();
     $title = $this->meta_model->get_meta_title_fm($this->uri->uri_string());
     echo '<meta name="title" content="'.$title.'">';
     if($title !== ''){
