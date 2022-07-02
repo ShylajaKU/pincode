@@ -9,15 +9,18 @@
     <?php 
     $this->meta_model->meta_fm();
     $title = $this->meta_model->get_meta_title_fm($this->uri->uri_string());
-    echo '<meta name="title" content="'.$title.'">';
     if($title !== ''){
-        $title = $title.' - ';
-    }
+        $title = $title;
+    }else{$title = 'pincodes.ind.in';}
+    echo '<meta name="title" content="'.$title.'">';
     ?>
-    <title><?= $title.'Find Pincodes' ?></title>
+    <title><?= $title.' - Find Pincodes' ?></title>
 
     <?php
     $description = $this->meta_model->get_meta_description_fm($this->uri->uri_string());
+    if($description == ''){
+      $description = 'Find any pincodes or post offices of Inaia';
+    }
     echo '<meta name="description" content="'.$description. '">';
     ?>
 
