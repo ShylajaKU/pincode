@@ -49,5 +49,5 @@ $this->meta_model->run_meta_for_all_given($uri_string);
         'uri_string_in_meta' => 1,
     );
     $this->db->where('sl_no',$sl_no);
-    $this->db->update('all_india_po_list',$data1)
+    $this->db->update('all_india_po_list',$data1);
 }
