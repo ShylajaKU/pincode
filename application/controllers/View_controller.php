@@ -189,7 +189,7 @@ public function po_entered(){
     echo $uri1 = $this->uri->segment(1);
     echo $uri2 = $this->uri->segment(2);
     echo $known_value = $po_sl_no = $this->input->post('po_sl_no');
-    $this->session->set_userdata('po_sl_no',$po_sl_no);
+    // $this->session->set_userdata('po_sl_no',$po_sl_no);
     $table_name = 'all_india_po_list';
     $known_value_col_name = 'sl_no';
     $op_value_col_name = 'officename_only_slug';
@@ -216,7 +216,11 @@ $value_col_name = 'Districtname_slug';
 $table_name = 'district_id';
 $is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
 if(!$is_true){redirect('search-by-place');}
-
+$value = $officename_only_slug = $this->uri->segment(3);
+$value_col_name = 'officename_only_slug';
+$table_name = 'all_india_po_list';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
 
 
 $table_name = 'state_id';
