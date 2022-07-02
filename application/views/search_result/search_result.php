@@ -65,7 +65,7 @@
 <br>
 <div class="container cont bord relative">
 
-<textarea class="inp" id="myInput" cols="" rows="3"  disabled>
+<textarea class="inp text-one" id="myInput" cols="" rows="3"  disabled>
 <?php echo $row['officename_only'].' P O , '.$row['divisionname'].' , '.$row['Districtname'].' , '.ucwords(strtolower($row['statename'])).' , India , Pincode - '.$row['pincode']?>
 </textarea>
 
@@ -80,6 +80,11 @@
 
 
 <script>
+    $(function(){
+    $('.text-one').focus(function(){
+        $(this).select();
+    });
+});
     function myFunction() {
   /* Get the text field */
   var copyText = document.getElementById("myInput");
