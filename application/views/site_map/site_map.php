@@ -26,7 +26,7 @@ $this->db->where('uri_string_in_meta','0');
 echo 'uri_string_in_meta = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
 echo '<br>';
 
-$this->db->limit(1000);
+$this->db->limit(10000);
 $this->db->where('uri_string_in_meta','0');
 $this->db->order_by('sl_no','asc');
 // $this->db->where('statename_slug !=','0');
