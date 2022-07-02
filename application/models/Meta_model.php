@@ -27,7 +27,16 @@ public function uri_checker_on_command_fm($base_url,$uri_string){
         // print_r($uri_string_array);
         $total_segments = count($uri_string_array);
         // echo $total_segments;
-    
+    if($count == 1){
+        $data = array(
+            'base_url' => $base_url,
+            'uri_string' => $uri_string,
+            'total_segments' => $total_segments,
+            );
+            $this->db->where('uri_string', $uri_string);
+            $this->db->where('base_url', $base_url);
+            $this->db->update('meta',$data);
+    }
         if($count == 0){
             // add to db
             $data = array(
