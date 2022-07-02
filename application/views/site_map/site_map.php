@@ -18,7 +18,7 @@
 
 
 
-// for($k = 0 ; $k < 1 ; $k++){
+for($k = 0 ; $k < 10 ; $k++){
 $this->db->where('uri_string_in_meta !=','0');
 echo 'uri_string_in_meta !=0 -- '. $count2 = $this->db->get('all_india_po_list')->num_rows();
 echo '<br>';
@@ -59,3 +59,5 @@ echo '<br>';
 $this->db->where('uri_string_in_meta','0');
 echo 'uri_string_in_meta = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
 echo '<br>';
+
+}
