@@ -173,7 +173,7 @@ $this->db->update('meta',$data);
 
 }
 // ------------------------------------------------------
-public function meta_for_uri_string_fm($sl_no){
+public function meta_for_uri_string_fm($sl_no, $uri_string){
     $this->db->where('sl_no',$sl_no);
 // $this->db->limit(1);
 $this->db->from('all_india_po_list');
@@ -215,7 +215,7 @@ $data = array(
     'meta_desc_len' => $meta_desc_length,
 );
 
-$this->db->where('sl_no',$sl_no);
+$this->db->where('uri_string',$uri_string);
 $this->db->update('meta',$data);
 
 
