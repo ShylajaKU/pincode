@@ -418,6 +418,38 @@ public function office_name_only_slug_creater(){
 }
 // ------------------------------------------------------
 // ------------------------------------------------------
+public function best_to_add_slug(){
+    
+$dis = $this->db->get('district_id')->result_array();
+var_dump($dis);
+
+foreach($dis as $d){
+echo     $Districtname_slug = $d['Districtname_slug'];
+echo $district_id = $d['district_id'];
+// echo 
+$data = array(
+    'Districtname_slug' => $Districtname_slug,
+);
+$this->db->where('district_id',$district_id);
+$this->db->update('all_india_po_list',$data);
+
+}
+
+// $dis = $this->db->get('state_id')->result_array();
+// // var_dump($dis);
+
+// foreach($dis as $d){
+// echo     $statename_slug = $d['statename_slug'];
+// echo $state_id = $d['state_id'];
+// // echo 
+// $data = array(
+//     'statename_slug' => $statename_slug,
+// );
+// $this->db->where('state_id',$state_id);
+// $this->db->update('all_india_po_list',$data);
+
+// }
+}
 // ------------------------------------------------------
 
 }
