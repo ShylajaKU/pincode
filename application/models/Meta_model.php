@@ -56,15 +56,15 @@ public function uri_checker_on_command_fm($base_url,$uri_string){
     // echo '<br>'.$seg_value.'<br>';
     }
 }
-    switch($uri_string_array[0]){
-        // this is $this->uri->segment(1)
-        case 'view_shared':
-            if(!empty($uri_string_array[1])){
-                $post_id = $uri_string_array[1];
-            $this->meta_model->meta_for_view_shared_fm($post_id,$sl_no);
-            }
-        break;
-    }
+    // switch($uri_string_array[0]){
+    //     // this is $this->uri->segment(1)
+    //     case 'view_shared':
+    //         if(!empty($uri_string_array[1])){
+    //             $post_id = $uri_string_array[1];
+    //         $this->meta_model->meta_for_view_shared_fm($post_id,$sl_no);
+    //         }
+    //     break;
+    // }
 
     // for pincodes
 
@@ -164,6 +164,58 @@ $this->db->update('meta',$data);
 
 }
 // ------------------------------------------------------
+public function meta_for_uri_string_fm($sl_no){
+    $this->db->where('sl_no',$sl_no);
+// $this->db->limit(1);
+$this->db->from('all_india_po_list');
+$op = $this->db->get()->result_array();
+
+$array = $op[0];
+
+$a = $officename_only = $array['officename_only'];
+$b = $officename = $array['officename'];
+$c = $pincode = $array['pincode'];
+$d = $regionname = $array['regionname'];
+$e = $circlename = $array['circlename'];
+$f = $Taluk = $array['Taluk'];
+$g = $Districtname = $array['Districtname'];
+$h = $statename = $array['statename'];
+$i = $Telephone = $array['Telephone'];
+
+
+$desc = 
+        'Pincode : '.$c
+        .', PO name : '.$a
+        .', Region :'.$d
+        .', Circle :'.$e
+        .', Taluk : '.$f
+        .', District : '.$g
+        .', State : '.$h;
+    if($i != 'NA'){
+        $desc = $desc.', tel : '.$i ;
+    }
+
+$desc;
+
+$meta_title = $pincode;
+$meta_description = $desc;
+$meta_desc_length = strlen($meta_description);
+$data = array(
+    'meta_title' => $meta_title,
+    'meta_description' => $meta_description,
+    'meta_desc_len' => $meta_desc_length,
+);
+
+$this->db->where('segment_1',$pincode);
+$this->db->update('meta',$data);
+
+
+}
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+
 // ------------------------------------------------------
 public function get_unique_pincodes_into_pincode_list_table(){
     // for setting pincode in pincode_list table
@@ -221,7 +273,7 @@ for($run = 0 ; $run <=1; $run++){
 }
 // ------------------------------------------------------
 public function set_meta_for_pincodes(){
-
+// main use this
     for($k=0 ; $k < 30; $k++){
         $this->db->where('pincode_in_meta_table',1);
         echo $count1 = $this->db->get('pincode_list')->num_rows();
@@ -451,5 +503,91 @@ $this->db->update('all_india_po_list',$data);
 // }
 }
 // ------------------------------------------------------
+public function make_and_update_uri_string(){
+    
+
+
+// for($k = 0 ; $k < 1 ; $k++){
+$this->db->where('uri_string !=','0');
+echo 'uri_string !=0 -- '. $count2 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
+$this->db->where('uri_string','0');
+echo 'uri_string = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
+
+$this->db->limit(1000);
+$this->db->where('uri_string','0');
+$this->db->order_by('sl_no','asc');
+// $this->db->where('statename_slug !=','0');
+// $this->db->where('Districtname_slug !=','0');
+
+$this->db->select(array('sl_no','statename_slug','Districtname_slug','officename_only_slug'));
+$result = $this->db->get('all_india_po_list')->result_array();
+// var_dump($result);
+
+foreach($result as $re){
+echo '<br>';
+echo    $sl_no = $re['sl_no'];
+echo '<br>';
+echo    $statename_slug = $re['statename_slug'];
+echo '<br>';
+
+echo    $Districtname_slug = $re['Districtname_slug'];
+echo '<br>';
+
+echo    $officename_only_slug = $re['officename_only_slug'];
+echo '<br>';
+
+$uri_string = $statename_slug.'/'.$Districtname_slug.'/'.$officename_only_slug;
+
+if(!$statename_slug){
+    $uri_string = '0';
+}
+echo $uri_string;
+$data = array(
+    'uri_string' => $uri_string,
+);
+// var_dump($data);
+
+// $this->db->where('sl_no',$sl_no);
+// $this->db->update('all_india_po_list',$data);
+
+
+}
+$this->db->where('uri_string !=','0');
+echo 'uri_string !=0 -- '. $count2 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
+$this->db->where('uri_string','0');
+echo 'uri_string = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
+// }
+
+}
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+// ------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
