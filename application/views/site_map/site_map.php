@@ -46,7 +46,7 @@ $this->meta_model->run_meta_for_all_given($uri_string);
     $this->meta_model->meta_for_uri_string_fm($sl_no,$uri_string);
     
     $data1 = array(
-        'uri_string_in_meta' => 1;
+        'uri_string_in_meta' => 1,
     );
     $this->db->where('sl_no',$sl_no);
     $this->db->update('all_india_po_list',$data1)
