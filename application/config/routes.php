@@ -11,12 +11,14 @@ $route['search-by-place'] = 'view_controller/search_by_place_fc';
 $route['site-map'] = 'meta_controller/site_map_fc';
 
 $route['state_entered'] = 'view_controller/state_entered';
-
 $route['(:any)'] = 'view_controller/state_in_url_fc'; 
+
 $route['(:any)/district_entered'] = 'view_controller/district_entered';
 $route['(:any)/(:any)'] = 'view_controller/district_in_url_fc';
+
 $route['(:any)/(:any)/po_entered'] = 'view_controller/po_entered';
 $route['(:any)/(:any)/(:any)'] = 'view_controller/po_in_url_fc';
+
 $route['404_override'] = 'view_controller/search_by_place_fc';
 
 $route['translate_uri_dashes'] = FALSE;
