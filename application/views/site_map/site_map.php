@@ -43,7 +43,7 @@ $this->db->where('uri_string','0');
 echo 'uri_string = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
 echo '<br>';
 
-$this->db->limit(10);
+// $this->db->limit(10);
 $this->db->where('uri_string','0');
 $this->db->order_by('sl_no','asc');
 // $this->db->where('statename_slug !=','0');
@@ -51,7 +51,7 @@ $this->db->order_by('sl_no','asc');
 
 $this->db->select(array('sl_no','statename_slug','Districtname_slug','officename_only_slug'));
 $result = $this->db->get('all_india_po_list')->result_array();
-var_dump($result);
+// var_dump($result);
 
 foreach($result as $re){
 echo '<br>';
