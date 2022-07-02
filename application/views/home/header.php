@@ -38,6 +38,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <link rel="stylesheet" href="<?= base_url('assets\css\bootstrap5-1-3.min.css')?>">
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4176141279201887"
+     crossorigin="anonymous"></script>
+
 </head>
 <?php require'styles.php'; ?>
 
