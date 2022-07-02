@@ -92,7 +92,12 @@ public function state_in_url_fc(){
     // var_dump($state_names);
     $data['state_names'] = $state_names;
 
-$state_slug = $this->uri->segment(1);
+$value = $state_slug = $this->uri->segment(1);
+$value_col_name = 'statename_slug';
+$table_name = 'state_id';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
+
 $table_name = 'state_id';
 $known_value = $state_slug;
 $known_value_col_name = 'statename_slug';    
@@ -133,7 +138,17 @@ public function district_in_url_fc(){
     $data['state_names'] = $state_names;
 
     
-$state_slug = $this->uri->segment(1);
+$value = $state_slug = $this->uri->segment(1);
+$value_col_name = 'statename_slug';
+$table_name = 'state_id';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
+$value = $Districtname_slug = $this->uri->segment(2);
+$value_col_name = 'Districtname_slug';
+$table_name = 'district_id';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
+
 $table_name = 'state_id';
 $known_value = $state_slug;
 $known_value_col_name = 'statename_slug';    
@@ -148,6 +163,7 @@ $data['district_names'] = $this->get_model->get_specific_rows_fm($value,$value_c
 
 
 $Districtname_slug = $this->uri->segment(2);
+
 $table_name = 'district_id';
 $known_value = $Districtname_slug;
 $known_value_col_name = 'Districtname_slug';
@@ -176,10 +192,10 @@ public function po_entered(){
     $this->session->set_userdata('po_sl_no',$po_sl_no);
     $table_name = 'all_india_po_list';
     $known_value_col_name = 'sl_no';
-    $op_value_col_name = 'officename_only';
-    echo $officename_only = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
+    $op_value_col_name = 'officename_only_slug';
+    echo $officename_only_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
 
-    redirect($uri1.'/'.$uri2.'/'.$officename_only);
+    redirect($uri1.'/'.$uri2.'/'.$officename_only_slug);
 }
 //--------------------------------------------------
 public function po_in_url_fc(){
@@ -190,7 +206,19 @@ public function po_in_url_fc(){
     $data['state_names'] = $state_names;
 
     
-$state_slug = $this->uri->segment(1);
+$value = $state_slug = $this->uri->segment(1);
+$value_col_name = 'statename_slug';
+$table_name = 'state_id';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
+$value = $Districtname_slug = $this->uri->segment(2);
+$value_col_name = 'Districtname_slug';
+$table_name = 'district_id';
+$is_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
+if(!$is_true){redirect('search-by-place');}
+
+
+
 $table_name = 'state_id';
 $known_value = $state_slug;
 $known_value_col_name = 'statename_slug';    
