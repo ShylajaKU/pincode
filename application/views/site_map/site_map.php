@@ -13,7 +13,7 @@ $data = array(
     'statename_slug' => $statename_slug,
 );
 $this->db->where('state_id',$state_id);
-$this->db->update('all_india_po_list',$data)
+$this->db->update('all_india_po_list',$data);
 
 }
 
