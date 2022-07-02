@@ -65,12 +65,19 @@
 <br>
 <div class="container cont bord relative">
 
-<textarea class="inp text-one" id="myInput" cols="" rows="3"  disabled>
+<textarea class="inp text-one" id="myInput" cols="" rows="3">
 <?php echo $row['officename_only'].' P O , '.$row['divisionname'].' , '.$row['Districtname'].' , '.ucwords(strtolower($row['statename'])).' , India , Pincode - '.$row['pincode']?>
 </textarea>
 
 <!-- The button used to copy the text -->
-<button class="ip-button bord" onclick="myFunction()">Copy</button>
+<style>
+    @media (min-width: 400px) {
+    #button-pc {
+        display: none;
+    }
+}
+</style>
+<button class="ip-button bord" id="button-pc" onclick="myFunction()">Copy</button>
 
 </div>
 <br><hr style="width:50vw ; margin:auto;"><br>
