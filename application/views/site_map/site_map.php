@@ -34,7 +34,7 @@ $this->db->order_by('sl_no','asc');
 
 $this->db->select(array('sl_no','uri_string'));
 $result = $this->db->get('all_india_po_list')->result_array();
-var_dump($result);
+// var_dump($result);
 
 foreach($result as $re){
 echo '<br>';
@@ -51,3 +51,11 @@ $this->meta_model->run_meta_for_all_given($uri_string);
     $this->db->where('sl_no',$sl_no);
     $this->db->update('all_india_po_list',$data1);
 }
+
+
+$this->db->where('uri_string_in_meta !=','0');
+echo 'uri_string_in_meta !=0 -- '. $count2 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
+$this->db->where('uri_string_in_meta','0');
+echo 'uri_string_in_meta = 0 --'. $count1 = $this->db->get('all_india_po_list')->num_rows();
+echo '<br>';
