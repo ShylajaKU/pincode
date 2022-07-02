@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // $route['default_controller'] = 'welcome';
 $route['default_controller'] = 'view_controller/home_fc';
-$route['home'] = 'view_controller/home_fc';
+// $route['home'] = 'view_controller/home_fc';
 
 $route['(:num)'] = 'view_controller/search_pincode_fc'; 
 
