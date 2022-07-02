@@ -14,4 +14,12 @@
 //     $this->db->update('meta',$data);
 // }
 
-echo base_url();
+// echo base_url();
+
+$base_url = 'https://www.pincodes.ind.in/';
+
+$data = array(
+            'base_url' => $base_url,
+        );
+        $this->db->update('meta',$data);
+
