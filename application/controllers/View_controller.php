@@ -245,8 +245,19 @@ $value_col_name = 'district_id';
 $table_name = 'all_india_po_list';
 $data['officenames'] = $this->get_model->get_specific_rows_fm($value,$value_col_name,$table_name);
 
-$po_sl_no = $this->session->userdata('po_sl_no');
-$data['po_sl_no'] = $po_sl_no;
+
+$officename_only_slug = $this->uri->segment(3);
+$table_name = 'all_india_po_list';
+$known_value = $officename_only_slug;
+$known_value_col_name = 'officename_only_slug';
+$op_value_col_name = 'sl_no';
+$sl_no = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
+$data['po_sl_no'] = $sl_no;
+$po_sl_no = $sl_no;
+
+// $po_sl_no = $this->session->userdata('po_sl_no');
+// $data['po_sl_no'] = $po_sl_no;
+
 $table_name = 'all_india_po_list';
 $known_value = $po_sl_no;
 $known_value_col_name = 'sl_no';
