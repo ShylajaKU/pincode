@@ -8,7 +8,7 @@ $route['default_controller'] = 'view_controller/home_fc';
 $route['(:num)'] = 'view_controller/search_pincode_fc'; 
 
 $route['search-by-place'] = 'view_controller/search_by_place_fc';
-$route['state_entered'] = 'view_controller/state_entered';
+// $route['state_entered'] = 'view_controller/state_entered';
 $route['site-map'] = 'meta_controller/site_map_fc';
 
 $route['(:any)'] = 'view_controller/state_in_url_fc'; 

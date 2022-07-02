@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 // $config['base_url'] = '';
 if($_SERVER['SERVER_ADDR'] == '103.20.212.253'){
-    $config['base_url'] = 'https://www.pincodes.ind.in';
+    $config['base_url'] = 'https://pincodes.ind.in';
     }else{
     $config['base_url'] = 'http://localhost/pincode';
     }
