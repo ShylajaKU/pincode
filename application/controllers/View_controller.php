@@ -294,7 +294,8 @@ $known_value_col_name = 'officename_only_slug';
 $op_value_col_name = 'sl_no';
 $sl_no = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
 $data['po_sl_no'] = $sl_no;
-$po_sl_no = $sl_no;
+
+echo $po_sl_no = $sl_no;
 
 // $po_sl_no = $this->session->userdata('po_sl_no');
 // $data['po_sl_no'] = $po_sl_no;
