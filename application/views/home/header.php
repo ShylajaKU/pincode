@@ -34,7 +34,7 @@
 
 
 
-<link rel="stylesheet" href="<?= base_url('assets\css\bootstrap5-1-3.min.css')?>">
+<link rel="stylesheet" href="<?= base_url('assets\css\bootstrap.min.css')?>">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4176141279201887"
      crossorigin="anonymous"></script>
