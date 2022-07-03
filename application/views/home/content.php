@@ -56,9 +56,8 @@ Similarly under Sub Offices there can be as many needed Branch Offices.
 <p>
 Most of the time Sub offices and Branch offices will also have same PIN code as the Head Office.
 </p>
-<p><strong>
+<p>
 If a Sub Office also handles mail deliveries then that will have another PIN code other than that of it's Head office. This is to facilitate faster mail deliveries.
-</strong>
 </p>
 </section>
 <br>
