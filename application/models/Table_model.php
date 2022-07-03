@@ -10,7 +10,7 @@ public function slug_creater_fm($string){
 
     // $string = str_replace('.', '-', $string);
     $string = str_replace(' ', '-', $string);
-    // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
 
     // $string = str_replace('--', '-', $string);
     $string = reduce_multiples($string,'-',true);
