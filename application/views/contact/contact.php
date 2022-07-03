@@ -15,7 +15,7 @@
         display: flex;
         justify-content: center;
     }
-    </style>
+</style>
     <br>
     <div class="container center"><h2>Contact Us</h2></div>
     <br>

@@ -29,19 +29,27 @@
         top: 5px;
         right: 5px;
     }
-    
+    .count{
+        font-weight: 650;
+        display: flex;
+        justify-content: center;
+    }
 </style>
     <?php if(!$valid_pincode){ ?>
         <div class="container cont bord">
-
         <?php echo 'Pincode ( '.$pincode. ' ) is Invalid'; ?>
         </div>
-<?php } ?>
+    <?php } ?>
     <?php
     if($valid_pincode){
-    foreach($table_rows as $row){?>
+        $count3 = count($table_rows);
+        for($i = 0;$i < $count3 ; $i++){
+    // foreach($table_rows as $row){
+        $row = $table_rows[$i];
+        ?>
 <div class="container cont bord">
     <?php 
+        echo '<div class="count">'.($i + 1).' of '.$count3.' Post Offices '.'</div>';
         echo 'Pincode : ' .$row['pincode'] .'<br>';
         echo 'Post Office : ' .$row['officename_only'] .'<br>';
         echo 'City : ' .$row['divisionname'] .'<br>';
