@@ -88,6 +88,21 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 
 </div>
 </section>
+<br>
+
+<section>
+    <h5>List of PIN Codes</h5>
+<div class="container bor overflow">
+<ol>
+    <?php foreach($pincode_list as $pin): ?>
+    <li><?= ' >>> '.$pin['pincode'] ?></li>
+    <?php endforeach; ?>
+</ol>
+<li>This information is subject to change.</li>
+
+</div>
+</section>
+
 
 </div>
 <br><br><br>

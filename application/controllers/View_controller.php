@@ -26,6 +26,9 @@ public function home_fc(){
     $data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
     $this->db->select('suboffice_name');
     $data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
+    $this->db->select('pincode');
+    $data['pincode_list'] = $this->db->get('pincode_list')->result_array();
+    
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
         $this->load->view('home/header');
