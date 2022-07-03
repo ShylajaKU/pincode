@@ -1,7 +1,12 @@
 <style>
     .bor{
         /* border: 1px black solid; */
-        width: 85vw;
+        width: 50vw;
+    }
+    @media (max-width: 500px) {
+        .bor{
+            width: 85vw;
+        }
     }
     .overflow{
         height: 200px;
