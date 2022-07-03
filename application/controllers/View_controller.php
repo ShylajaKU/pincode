@@ -43,6 +43,13 @@ public function home_fc(){
 }
 //--------------------------------------------------
 public function search_pincode_fc(){
+    $this->db->select('headoffice_name');
+    $data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
+    $this->db->select('suboffice_name');
+    $data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
+    $this->db->select('pincode');
+    $data['pincode_list'] = $this->db->get('pincode_list')->result_array();
+
     //  value is pincode
 $value = $this->uri->segment(1);
 $data['pincode'] = $value;
@@ -57,6 +64,7 @@ if(!$is_pincode_true){
     $this->load->view('home/header');
     $this->load->view('home/home');
     $this->load->view('search_result/search_result',$data);
+    $this->load->view('home/content',$data);
     $this->load->view('home/footer');
 }else{
     $data['valid_pincode'] = true;
@@ -66,6 +74,7 @@ if(!$is_pincode_true){
     $this->load->view('home/header');
     $this->load->view('home/home');
     $this->load->view('search_result/search_result',$data);
+    $this->load->view('home/content',$data);
     $this->load->view('home/footer');
 }
 }else{
@@ -295,10 +304,19 @@ $pincode_row = $this->get_model->get_row_fm($table_name,$known_value,$known_valu
 // var_dump($pincode_row);
 $data['table_rows'] = $pincode_row;
 $data['valid_pincode'] = true;
+
+$this->db->select('headoffice_name');
+$data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
+$this->db->select('suboffice_name');
+$data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
+$this->db->select('pincode');
+$data['pincode_list'] = $this->db->get('pincode_list')->result_array();
+
 $this->load->view('home/header');
 $this->load->view('home/search_by_place',$data);
 // $table_rows  $valid_pincode for search result page
 $this->load->view('search_result/search_result');
+$this->load->view('home/content',$data);
 $this->load->view('home/footer');
 
 }
