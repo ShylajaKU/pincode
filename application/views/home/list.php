@@ -17,7 +17,7 @@
         padding-left: 25px;
     }
 </style>
-
+<br><br>
 <div class="container bor">
 
 <section>
@@ -66,4 +66,5 @@
 
 </div>
 
+<br><br><br><br>
 <br><br><br><br>
