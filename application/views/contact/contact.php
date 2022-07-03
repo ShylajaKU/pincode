@@ -12,8 +12,9 @@
         padding: 10px;
     }
     </style>
+    <br><br>
         <div class="container cont bord">
 
-Email ID : pincodes.ind.in@gmail.com
+Email ID  :  pincodes.ind.in@gmail.com
 
         </div>
