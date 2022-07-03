@@ -80,7 +80,7 @@
 
 <!-- The button used to copy the text -->
 <style>
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
     #button-pc {
         visibility: hidden;
     }
