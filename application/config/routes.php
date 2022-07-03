@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'view_controller/home_fc';
 $route['contact'] = 'view_controller/contact_fc';
 $route['privacy-policy'] = 'view_controller/privacy_policy_fc';
+$route['terms'] = 'view_controller/terms_fc';
 
 $route['(:num)'] = 'view_controller/search_pincode_fc'; 
 

@@ -15,6 +15,12 @@ public function privacy_policy_fc(){
     $this->load->view('privacy/privacy_policy');
     $this->load->view('home/footer');
 }//--------------------------------------------------
+//--------------------------------------------------
+public function terms_fc(){
+    $this->load->view('home/header');
+    $this->load->view('privacy/terms');
+    $this->load->view('home/footer');
+}//--------------------------------------------------
 public function home_fc(){
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
