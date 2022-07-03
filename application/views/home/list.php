@@ -33,7 +33,7 @@
 <div class="container bor overflow">
 <ol>
     <?php foreach($pincode_list as $pin): ?>
-    <li> >>> <a href="<?= base_url($pin['pincode'])?>">
+    <li> >>> <a href="https://pincodes.ind.in/<?= $pin['pincode']?>">
         <?= $pin['pincode'] ?>
     </a>
     </li>
