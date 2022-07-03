@@ -29,7 +29,7 @@ public function get_a_single_column_and_add_unique_values_to_another_table_fm(
 // $unique_no similar to sl_no but me inserted like state_id
 $num_of_rows_in_source = $this->db->get($source_table_name)->num_rows();
 // how many times do we need to run this code
-$run_count = ceil($num_of_rows_in_source/$array_lenth);
+echo $run_count = ceil($num_of_rows_in_source/$array_lenth);
 
 $this->db->from($destination_table_name);
 $this->db->select($unique_no_col_name);
@@ -67,7 +67,7 @@ for($i = 0; $i < $run_count; $i++){
                     
             }
 
-        }
+        
 
             
 // var_dump($data);
@@ -93,12 +93,12 @@ $explode = explode(',',$implode);
                 $this->db->insert($destination_table_name, $data);
                 $new_unique_id++;
             }
-            // var_dump($data);
+            var_dump($data);
 
         }
 
 
-
+    }
 }
 
 
