@@ -63,7 +63,7 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 </section>
 <br>
 <section>
-    <h5>List of Head Offices</h5>
+    <h5>List of Head Post Offices in India</h5>
 <div class="container bor overflow">
 <ol>
     <?php foreach($headoffice_list as $ho): ?>
@@ -77,7 +77,7 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 <br>
 
 <section>
-    <h5>List of Sub Offices</h5>
+    <h5>List of Sub Post Offices in India</h5>
 <div class="container bor overflow">
 <ol>
     <?php foreach($suboffice_list as $so): ?>
@@ -91,7 +91,7 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 <br>
 
 <section>
-    <h5>List of PIN Codes</h5>
+    <h5>List of PIN Codes of India</h5>
 <div class="container bor overflow">
 <ol>
     <?php foreach($pincode_list as $pin): ?>
@@ -106,5 +106,3 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 
 </div>
 <br><br><br>
-<?php
-// echo $this->db->get('all_india_po_list')->num_rows();
