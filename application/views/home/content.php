@@ -1,7 +1,7 @@
 <style>
     .bor{
         /* border: 1px black solid; */
-        width: 60vw;
+        width: 85vw;
     }
     .overflow{
         height: 200px;
