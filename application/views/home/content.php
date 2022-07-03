@@ -95,7 +95,10 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 <div class="container bor overflow">
 <ol>
     <?php foreach($pincode_list as $pin): ?>
-    <li><?= ' >>> '.$pin['pincode'] ?></li>
+    <li> >>> <a href="<?= base_url($pin['pincode'])?>">
+        <?= $pin['pincode'] ?>
+    </a>
+    </li>
     <?php endforeach; ?>
 </ol>
 <li>This information is subject to change.</li>
