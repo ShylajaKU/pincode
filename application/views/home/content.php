@@ -14,6 +14,7 @@
     .overflow{
         height: 200px;
         overflow: auto;
+        padding-left: 25px;
     }
 </style>
 <br><br>
