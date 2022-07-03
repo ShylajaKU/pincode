@@ -62,8 +62,8 @@ for($i = 0; $i < $run_count; $i++){
     $this->db->order_by($source_ordered_by , $source_asc_or_desc);
     $this->db->limit($array_lenth, $i * $array_lenth);
     $this->db->select($select);
-    $results = $this->db->get($source_table_name)->result_array();
-
+    $query2 = $this->db->get($source_table_name);
+    $results = $query2->result_array();
     // var_dump($results);
 
         $data = array();
