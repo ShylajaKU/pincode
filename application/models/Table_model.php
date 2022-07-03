@@ -4,6 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Table_model extends CI_Model
 {
 // ------------------------------------------------------
+public function slug_creater_fm($string){
+    $string = str_replace('.', ' ', $string);
+    $string = ucwords(strtolower($string));
+
+    // $string = str_replace('.', '-', $string);
+    $string = str_replace(' ', '-', $string);
+    // $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+
+    // $string = str_replace('--', '-', $string);
+    $string = reduce_multiples($string,'-',true);
+    return $string;
+}
 // ------------------------------------------------------
 // ------------------------------------------------------
 
@@ -24,10 +36,11 @@ public function get_a_single_column_and_add_unique_values_to_another_table_fm(
     $col_name_of_value_to_get,
     $destination_table_name,
     $unique_no_col_name,
-    $col_name_of_value_to_add
+    $col_name_of_value_to_add,
+    $slug_col_name
     ){
 // $unique_no similar to sl_no but me inserted like state_id
-$num_of_rows_in_source = $this->db->get($source_table_name)->num_rows();
+echo $num_of_rows_in_source = $this->db->get($source_table_name)->num_rows();
 // how many times do we need to run this code
 echo $run_count = ceil($num_of_rows_in_source/$array_lenth);
 
@@ -79,11 +92,13 @@ $explode = explode(',',$implode);
 
         for($k = 0; $k < count($explode); $k++){
             // $unique_no_col_name = $new_unique_id;
-            // $col_name_of_value_to_add = $explode[$k];
+            $string = $explode[$k];
+            echo $slug =  $this->table_model->slug_creater_fm($string);
 
             $data = array(
                 $unique_no_col_name => $new_unique_id,
                 $col_name_of_value_to_add => $explode[$k],
+                $slug_col_name => $slug,
             );
             // var_dump($data);
             $this->db->where($col_name_of_value_to_add,$explode[$k]);
