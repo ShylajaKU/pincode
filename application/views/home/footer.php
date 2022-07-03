@@ -5,24 +5,20 @@ switch($seg){
         echo '<br><br><br><br><br><br><br><br>';
         echo '<br><br><br><br><br><br><br><br>';
         echo '<br><br><br><br>';
-        echo 'nonr';
         break;
         case 'contact':
             echo '<br><br><br><br><br><br><br><br>';
             echo '<br><br><br><br><br><br><br><br>';
             echo '<br><br><br><br>';
-            echo 'nonr';
             break;
     case 'search-by-place':
         echo '<br><br><br><br>';
         echo '<br><br><br><br>';
         echo '<br><br><br><br>';
         echo '<br><br>';
-        echo 'j';
         break;
     default:
         echo '<br><br><br>';
-        echo 'juh';
         break;
 }
 ?>
