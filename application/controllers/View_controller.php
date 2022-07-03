@@ -22,18 +22,18 @@ public function terms_fc(){
     $this->load->view('home/footer');
 }//--------------------------------------------------
 public function home_fc(){
-    $this->db->select('headoffice_name');
-    $data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
-    $this->db->select('suboffice_name');
-    $data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
-    $this->db->select('pincode');
-    $data['pincode_list'] = $this->db->get('pincode_list')->result_array();
+    // $this->db->select('headoffice_name');
+    // $data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
+    // $this->db->select('suboffice_name');
+    // $data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
+    // $this->db->select('pincode');
+    // $data['pincode_list'] = $this->db->get('pincode_list')->result_array();
     
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
         $this->load->view('home/header');
         $this->load->view('home/home');
-        $this->load->view('home/content',$data);
+        $this->load->view('home/content');
         $this->load->view('home/footer');
         }else{
             $pincode = $this->input->post('pincode');
@@ -74,7 +74,8 @@ if(!$is_pincode_true){
     $this->load->view('home/header');
     $this->load->view('home/home');
     $this->load->view('search_result/search_result',$data);
-    $this->load->view('home/content',$data);
+    $this->load->view('home/content');
+    $this->load->view('home/list');
     $this->load->view('home/footer');
 }
 }else{
@@ -316,7 +317,8 @@ $this->load->view('home/header');
 $this->load->view('home/search_by_place',$data);
 // $table_rows  $valid_pincode for search result page
 $this->load->view('search_result/search_result');
-$this->load->view('home/content',$data);
+$this->load->view('home/content');
+$this->load->view('home/list');
 $this->load->view('home/footer');
 
 }
