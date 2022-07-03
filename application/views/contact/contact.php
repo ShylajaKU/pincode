@@ -11,8 +11,15 @@
     .cont{
         padding: 10px;
     }
+    .center{
+        display: flex;
+        justify-content: center;
+    }
     </style>
-    <br><br>
+    <br>
+    <div class="container center"><h2>Contact Us</h2></div>
+    <br>
+
         <div class="container cont bord">
 
 Email ID  :  pincodes.ind.in@gmail.com
