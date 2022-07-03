@@ -6,7 +6,7 @@
     .overflow{
         height: 200px;
         overflow: auto;
-        padding-left: 35px;
+        padding-left: 3%;
     }
 </style>
 <br><br>
