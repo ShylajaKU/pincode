@@ -62,7 +62,7 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 </section>
 <br>
 <section>
-    <a href="<?= base_url('list-of-all-pincodes-of-india');?>">View List of Post Offices</a>
+    <a href="<?= base_url('list-of-all-pincodes-in-india');?>">View List of Post Offices</a>
 </section>
 
 </div>
