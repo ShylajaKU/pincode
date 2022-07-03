@@ -44,7 +44,7 @@
 </head>
 <?php require'styles.php'; ?>
 
-<body>
+<body style="position:relative ;">
 
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -70,9 +70,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('terms')?>">Terms</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
+        
       </ul>
     </div>
   </div>
