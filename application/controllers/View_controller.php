@@ -22,11 +22,13 @@ public function terms_fc(){
     $this->load->view('home/footer');
 }//--------------------------------------------------
 public function home_fc(){
+    $data['headoffice_list'] = $this->db->get('headoffice_list')->result_array();
+    $data['suboffice_list'] = $this->db->get('suboffice_list')->result_array();
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
         $this->load->view('home/header');
         $this->load->view('home/home');
-        $this->load->view('home/content');
+        $this->load->view('home/content',$data);
         $this->load->view('home/footer');
         }else{
             $pincode = $this->input->post('pincode');

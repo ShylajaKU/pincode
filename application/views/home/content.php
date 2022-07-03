@@ -3,6 +3,11 @@
         /* border: 1px black solid; */
         width: 60vw;
     }
+    .overflow{
+        height: 200px;
+        overflow: auto;
+        padding-left: 35px;
+    }
 </style>
 <br><br>
 <div class="container bor">
@@ -47,11 +52,36 @@ Most of the time Sub offices and Branch offices will also have same PIN code as 
 If a Sub Office also handles mail deliveries then that will have another PIN code other than that of it's Head office. This is to facilitate faster mail deliveries.
 </strong>
 </p>
+</section>
+<br>
+<section>
+    <h5>List of Head Offices</h5>
+<div class="container bor overflow">
+<ol>
+    <?php foreach($headoffice_list as $ho): ?>
+    <li><?= $ho['headoffice_name'] ?></li>
+    <?php endforeach; ?>
+</ol>
+<li>This information is subject to change.</li>
 
+</div>
 </section>
 <br>
 
-</div>
+<section>
+    <h5>List of Sub Offices</h5>
+<div class="container bor overflow">
+<ol>
+    <?php foreach($suboffice_list as $so): ?>
+    <li><?= $so['suboffice_name'] ?></li>
+    <?php endforeach; ?>
+</ol>
+<li>This information is subject to change.</li>
 
+</div>
+</section>
+
+</div>
+<br><br><br>
 <?php
 // echo $this->db->get('all_india_po_list')->num_rows();

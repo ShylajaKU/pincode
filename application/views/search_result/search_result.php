@@ -47,7 +47,7 @@
         for($i = 0;$i < $count3 ; $i++){
     // foreach($table_rows as $row){
         $row = $table_rows[$i];
-        var_dump($row);
+        // var_dump($row);
         ?>
 <div class="container cont bord">
     <?php 
@@ -113,9 +113,8 @@
 
 </div>
 <br><hr style="width:50vw ; margin:auto;"><br>
-   <?php }
-    }
-    ?>
+   <?php }?>
+   <?php }?>
 
 
 <script>
