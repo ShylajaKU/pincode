@@ -33,6 +33,7 @@
         font-weight: 650;
         display: flex;
         justify-content: center;
+        text-decoration: underline;
     }
 </style>
     <?php if(!$valid_pincode){ ?>
