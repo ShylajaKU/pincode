@@ -26,6 +26,7 @@ public function home_fc(){
         if(!$this->form_validation->run()){
         $this->load->view('home/header');
         $this->load->view('home/home');
+        $this->load->view('home/content');
         $this->load->view('home/footer');
         }else{
             $pincode = $this->input->post('pincode');

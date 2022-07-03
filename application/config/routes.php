@@ -2,15 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // $route['default_controller'] = 'welcome';
-$route['default_controller'] = 'view_controller/home_fc';
 $route['contact'] = 'view_controller/contact_fc';
 $route['privacy-policy'] = 'view_controller/privacy_policy_fc';
 $route['terms'] = 'view_controller/terms_fc';
+$route['seo/sitemap\.xml'] = "seo/sitemap";
+$route['site-map'] = 'meta_controller/site_map_fc';
+
+$route['sitemap-gen'] = 'sitemap/index';
+$route['sitemap-gene'] = 'sitemap/general';
+$route['sitemap-art'] = 'sitemap/articles';
+
+$route['search-by-place'] = 'view_controller/search_by_place_fc';
+$route['default_controller'] = 'view_controller/home_fc';
+
 
 $route['(:num)'] = 'view_controller/search_pincode_fc'; 
 
-$route['search-by-place'] = 'view_controller/search_by_place_fc';
-$route['site-map'] = 'meta_controller/site_map_fc';
 
 $route['state_entered'] = 'view_controller/state_entered';
 $route['(:any)'] = 'view_controller/state_in_url_fc'; 

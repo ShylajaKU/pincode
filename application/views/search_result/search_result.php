@@ -47,12 +47,35 @@
         for($i = 0;$i < $count3 ; $i++){
     // foreach($table_rows as $row){
         $row = $table_rows[$i];
+        var_dump($row);
         ?>
 <div class="container cont bord">
     <?php 
         echo '<div class="count">'.($i + 1).' of '.$count3.' Post Offices '.'</div>';
         echo 'Pincode : ' .$row['pincode'] .'<br>';
         echo 'Post Office : ' .$row['officename_only'] .'<br>';
+        if($row['officeType'] != 'NA'){
+            $type = $row['officeType'];
+            switch ($type){
+                case 'S.O':
+                    echo 'Office Type : Sub Office'.'<br>';
+                    break;
+                case 'B.O';
+                echo 'Office Type : Branch Office'.'<br>';
+                    break;
+                    case 'H.O';
+                echo 'Office Type : Head Office'.'<br>';
+                    break;
+            }
+            }
+
+        if($row['Related Suboffice'] != 'NA'){
+        echo 'Sub office : ' .$row['Related Suboffice'] .'<br>';
+                }
+                    
+        if($row['Related Headoffice'] != 'NA'){
+        echo 'Head office : ' .$row['Related Headoffice'] .'<br>';
+        }
         echo 'City : ' .$row['divisionname'] .'<br>';
         echo 'Taluk : ' .$row['Taluk'] .'<br>';
         echo 'District : ' .$row['Districtname'] .'<br>';
