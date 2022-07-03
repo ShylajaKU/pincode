@@ -7,11 +7,13 @@
         .bor{
             width: 85vw;
         }
+        .overflow{
+            padding-left: 25px;
+        }
     }
     .overflow{
         height: 200px;
         overflow: auto;
-        padding-left: 3%;
     }
 </style>
 <br><br>
