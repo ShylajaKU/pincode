@@ -17,16 +17,45 @@ public function slug_creater_fm($string){
     return $string;
 }
 // ------------------------------------------------------
-// ------------------------------------------------------
+// $source_table_name = 'all_india_po_list';
+//     $select = array('sl_no','Related_Headoffice');
+//     $source_ordered_by = 'Related_Headoffice';
+//     $source_asc_or_desc = 'asc';
+//     $array_lenth = 154797;
+//     $col_name_of_value_to_get = 'Related_Headoffice';
 
-// USE THESE LINES TO RUN THE BELOW CODES
+//     $destination_table_name = 'headoffice_list';
+//     $unique_no_col_name = 'headoffice_id';
+//     $col_name_of_value_to_add = 'headoffice_name';
+//     $slug_col_name = 'headoffice_name_slug';
 
-// $this->table_model->add_district_names_to_district_id_table_fm();
-// $this->table_model->add_district_id_to_all_india_pincode_table_fm();
 
-// $this->table_model->add_state_names_to_state_id_table_fm();
-// $this->table_model->add_state_id_to_all_india_pincode_table_fm();
-// ------------------------------------------------------
+    
+// $source_table_name = 'all_india_po_list';
+// $select = array('sl_no','Related_Suboffice');
+// $source_ordered_by = 'Related_Suboffice';
+// $source_asc_or_desc = 'asc';
+// $array_lenth = 5000;
+// $col_name_of_value_to_get = 'Related_Suboffice';
+
+// $destination_table_name = 'suboffice_list';
+// $unique_no_col_name = 'suboffice_id';
+// $col_name_of_value_to_add = 'suboffice_name';
+// $slug_col_name = 'suboffice_name_slug';
+
+
+
+// $this->table_model->get_a_single_column_and_add_unique_values_to_another_table_fm(
+//     $source_table_name,
+//     $select,
+//     $source_ordered_by,$source_asc_or_desc, 
+//     $array_lenth, 
+//     $col_name_of_value_to_get,
+//     $destination_table_name,
+//     $unique_no_col_name,
+//     $col_name_of_value_to_add,
+//     $slug_col_name
+// );
 // ------------------------------------------------------
 public function get_a_single_column_and_add_unique_values_to_another_table_fm(
     $source_table_name,
@@ -123,7 +152,16 @@ $explode = explode(',',$implode);
 
 
 
+// ------------------------------------------------------
 
+// USE THESE LINES TO RUN THE BELOW CODES
+
+// $this->table_model->add_district_names_to_district_id_table_fm();
+// $this->table_model->add_district_id_to_all_india_pincode_table_fm();
+
+// $this->table_model->add_state_names_to_state_id_table_fm();
+// $this->table_model->add_state_id_to_all_india_pincode_table_fm();
+// ------------------------------------------------------
 
 
 
