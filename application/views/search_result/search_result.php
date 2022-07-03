@@ -69,12 +69,12 @@
             }
             }
 
-        if($row['Related Suboffice'] != 'NA'){
-        echo 'Sub office : ' .$row['Related Suboffice'] .'<br>';
+        if($row['Related_Suboffice'] != 'NA'){
+        echo 'Sub office : ' .$row['Related_Suboffice'] .'<br>';
                 }
                     
-        if($row['Related Headoffice'] != 'NA'){
-        echo 'Head office : ' .$row['Related Headoffice'] .'<br>';
+        if($row['Related_Headoffice'] != 'NA'){
+        echo 'Head office : ' .$row['Related_Headoffice'] .'<br>';
         }
         echo 'City : ' .$row['divisionname'] .'<br>';
         echo 'Taluk : ' .$row['Taluk'] .'<br>';
