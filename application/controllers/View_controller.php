@@ -95,7 +95,7 @@ public function search_by_place_fc(){
     $this->db->order_by('random_no','random');
     $query = $this->db->get('gk_qa');
     $data['gk'] = $query->result_array();
-    
+
     $table_name = 'state_id';
     $select = array('state_id','statename');
     $state_names = $this->get_model->get_selected_data_fm($table_name,$select);
@@ -121,12 +121,12 @@ public function search_by_place_fc(){
 }
 //--------------------------------------------------
 public function state_entered(){
-echo    $state_id = $this->input->post('state_id');
+ $state_id = $this->input->post('state_id');
 $table_name = 'state_id';
 $known_value = $state_id;
 $known_value_col_name = 'state_id';    
 $op_value_col_name = 'statename_slug';    
-echo $statename_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
+$statename_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
     redirect($statename_slug);
 
 }
@@ -168,11 +168,11 @@ $this->load->view('home/footer');
 }
 //--------------------------------------------------
 public function district_entered(){
-    echo $uri1 = $this->uri->segment(1);
-    echo $known_value = $district_id = $this->input->post('district_id');
+    $uri1 = $this->uri->segment(1);
+    $known_value = $district_id = $this->input->post('district_id');
     $known_value_col_name = $table_name = 'district_id';
     $op_value_col_name = 'Districtname_slug';
-    echo $Districtname_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
+    $Districtname_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
     redirect($uri1.'/'.$Districtname_slug);
 }
 //--------------------------------------------------
@@ -232,14 +232,14 @@ $this->load->view('home/footer');
 }
 //--------------------------------------------------
 public function po_entered(){
-    echo $uri1 = $this->uri->segment(1);
-    echo $uri2 = $this->uri->segment(2);
-    echo $known_value = $po_sl_no = $this->input->post('po_sl_no');
+    $uri1 = $this->uri->segment(1);
+    $uri2 = $this->uri->segment(2);
+    $known_value = $po_sl_no = $this->input->post('po_sl_no');
     // $this->session->set_userdata('po_sl_no',$po_sl_no);
     $table_name = 'all_india_po_list';
     $known_value_col_name = 'sl_no';
     $op_value_col_name = 'officename_only_slug';
-    echo $officename_only_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
+    $officename_only_slug = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
 
     redirect($uri1.'/'.$uri2.'/'.$officename_only_slug);
 }
@@ -304,7 +304,7 @@ $op_value_col_name = 'sl_no';
 $sl_no = $this->get_model->get_single_value_fm($table_name,$known_value,$known_value_col_name,$op_value_col_name);
 $data['po_sl_no'] = $sl_no;
 
-echo $po_sl_no = $sl_no;
+$po_sl_no = $sl_no;
 
 // $po_sl_no = $this->session->userdata('po_sl_no');
 // $data['po_sl_no'] = $po_sl_no;
