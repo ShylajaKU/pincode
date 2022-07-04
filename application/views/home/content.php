@@ -33,14 +33,28 @@
         margin: auto;
         margin-bottom: 15px;
     }
+    .hidden{
+        visibility: hidden;
+        
+        display: none;
+    }
 
 </style>
 <br><br>
 <div class="container bor">
 <section class="border-gk">
     <h6>Ponder the Question</h6>
-    <p><?= $gk[0]['question'] ?></p>
+    <p><?= $gk[0]['question'] ?>
+    <button class="btn" onclick="visibile()">&#8595</button></p>
+    <p id="answer-1" class="hidden"><?= $gk[0]['answer'] ?></p>
 </section>
+<script>
+    function visibile(){
+        document.getElementById("answer-1").style.visibility = 'visible';
+        document.getElementById("answer-1").style.display = 'block';
+    }
+
+</script>
 <section>
 <h5>What is a PIN</h5>
 <p> 

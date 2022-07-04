@@ -91,6 +91,11 @@ if(!$is_pincode_true){
 //--------------------------------------------------
 public function search_by_place_fc(){
 
+    $this->db->limit(1);
+    $this->db->order_by('random_no','random');
+    $query = $this->db->get('gk_qa');
+    $data['gk'] = $query->result_array();
+    
     $table_name = 'state_id';
     $select = array('state_id','statename');
     $state_names = $this->get_model->get_selected_data_fm($table_name,$select);
@@ -313,6 +318,10 @@ $pincode_row = $this->get_model->get_row_fm($table_name,$known_value,$known_valu
 $data['table_rows'] = $pincode_row;
 $data['valid_pincode'] = true;
 
+$this->db->limit(1);
+$this->db->order_by('random_no','random');
+$query = $this->db->get('gk_qa');
+$data['gk'] = $query->result_array();
 
 $this->load->view('home/header');
 $this->load->view('home/search_by_place',$data);
