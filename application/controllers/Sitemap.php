@@ -46,7 +46,12 @@ class Sitemap extends CI_Controller {
 	 */
 	public function index() {
 		$this->sitemapmodel->add(base_url('general.xml'), date('Y-m-d', time()));
-		$this->sitemapmodel->add(base_url('pincodes.xml'), date('Y-m-d', time()));
+		$this->db->select('lastmod');
+		$this->db->order_by('lastmod','desc');
+		$this->db->limit(1);
+		$query = $this->db->get('pincode_list')->result_array();
+		$lastmod = $query[0]['lastmod'];
+		$this->sitemapmodel->add(base_url('pincodes.xml'), $lastmod);
 		$this->sitemapmodel->output('sitemapindex');
 	}
 	
@@ -54,8 +59,8 @@ class Sitemap extends CI_Controller {
 	 * Generate a sitemap both based on static urls and an array of urls
 	 */
 	public function general() {
-		$this->sitemapmodel->add(base_url(), NULL, 'monthly', 1);
-		$this->sitemapmodel->add(base_url('search-by-place'), NULL, 'monthly', 0.9);
+		$this->sitemapmodel->add(base_url(), NULL, 'weekly', 1);
+		$this->sitemapmodel->add(base_url('search-by-place'), NULL, 'weekly', 0.9);
 		$this->sitemapmodel->add(base_url('contact'), NULL, 'yearly', 0.7);
 		$this->sitemapmodel->add(base_url('privacy-policy'), NULL, 'yearly', 0.7);
 		$this->sitemapmodel->add(base_url('terms'), NULL, 'yearly', 0.7);
@@ -83,11 +88,12 @@ class Sitemap extends CI_Controller {
 
 	public function pincodes(){
 		$this->db->select('pincode');
+		$this->db->select('lastmod');
 		// $this->db->limit(10);
 		$query = $this->db->get('pincode_list');
 		$result = $query->result_array();
 		foreach($result as $res){
-			$lastmod = $res['lastmod'];
+		$lastmod = $res['lastmod'];
 		$pincode = $res['pincode'];
 		$article = array(
 			'loc' => base_url($pincode),
