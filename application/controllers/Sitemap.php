@@ -13,9 +13,9 @@ class Sitemap extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		// We load the url helper to be able to use the base_url() function
-		$this->load->helper('url');
+		// $this->load->helper('url');
 		
-		$this->load->model('sitemapmodel');
+		// $this->load->model('sitemapmodel');
 		
 		// Array of some articles for demonstration purposes
 		$this->articles = array(
@@ -53,9 +53,14 @@ class Sitemap extends CI_Controller {
 		$lastmod = $query[0]['lastmod'];
 		$this->sitemapmodel->add(base_url('pincodes.xml'), $lastmod);
 
-		// $result = $this->db->get('state_id')->result_array();
+		$result = $this->db->get('state_id')->result_array();
+		foreach($result as $state){
+			$statename_slug = $state['statename_slug'];
+			$lastmod = $state['lastmod'];
+		$this->sitemapmodel->add(base_url('sitemap/'.$statename_slug.'.xml'), $lastmod);
 
 
+		}
 		$this->sitemapmodel->output('sitemapindex');
 	}
 	
@@ -116,6 +121,23 @@ class Sitemap extends CI_Controller {
 	
 // ----------------------------------------
 
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
+public function states(){
+	$state =  $this->uri->segment(2);
+	$state = str_replace('.xml','',$state);
+
+	$this->db->where('statename_slug',$state);
+	$result = $this->db->get('state_id')->result_array();
+	echo $state_id = $result[0]['state_id'];
+	// echo $lastmod = $result[0]['lastmod'];
+	$this->state_sitemap_model->state_sitemap_creater_fm($state_id);
+}
+// ----------------------------------------
+
+// ----------------------------------------
+// ----------------------------------------
 // ----------------------------------------
 // ----------------------------------------
 // ----------------------------------------

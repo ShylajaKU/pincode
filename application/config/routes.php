@@ -17,6 +17,7 @@ $route['add-gk-qa'] = 'admin_controller/add_gk';
 $route['sitemapindex\.xml'] = 'sitemap/index';
 $route['general\.xml'] = 'sitemap/general';
 $route['pincodes\.xml'] = 'sitemap/pincodes';
+$route['sitemap/(:any)'] = 'sitemap/states';
 
 // -----------------------
 
