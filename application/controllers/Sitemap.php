@@ -81,7 +81,7 @@ class Sitemap extends CI_Controller {
 		$this->sitemapmodel->output();
 	}
 
-	public function pincode(){
+	public function pincodes(){
 		$this->db->select('pincode');
 		// $this->db->limit(10);
 		$query = $this->db->get('pincode_list');

@@ -17,7 +17,7 @@ $route['add-gk-qa'] = 'admin_controller/add_gk';
 $route['sitemapindex\.xml'] = 'sitemap/index';
 $route['general\.xml'] = 'sitemap/general';
 // $route['sitemap-art'] = 'sitemap/articles';
-$route['pincode\.xml'] = 'sitemap/pincode';
+$route['pincodes\.xml'] = 'sitemap/pincodes';
 
 
 $route['search-by-place'] = 'view_controller/search_by_place_fc';
