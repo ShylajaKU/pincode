@@ -7,7 +7,9 @@
 <br>
 <input  class="form-control me-2" type="text" name="answer" placeholder="Answer">
 <br>
-<input class="btn btn-primary" style="width:200px ;" type="button" value="&#10003">
+<!-- <input class="btn btn-primary" style="width:200px ;" type="button" value="&#10003"> -->
+<button class="btn btn-primary" style="width:200px ;" type="submit">&#10003</button>
+
 <?= form_error('question')?>
 <?= form_close()?>
 
