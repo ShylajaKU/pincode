@@ -10,6 +10,9 @@
         .overflow{
             padding-left: 25px;
         }
+        .border-gk{
+            width: 85vw;
+        }
     }
     .overflow{
         height: 200px;
