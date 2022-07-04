@@ -14,8 +14,8 @@ $route['admin'] = 'admin_controller/admin';
 $route['add-gk-qa'] = 'admin_controller/add_gk';
 
 
-$route['sitemap-index'] = 'sitemap/index';
-$route['home\.xml'] = 'sitemap/home';
+$route['sitemapindex\.xml'] = 'sitemap/index';
+$route['general\.xml'] = 'sitemap/general';
 // $route['sitemap-art'] = 'sitemap/articles';
 $route['pincode\.xml'] = 'sitemap/pincode';
 

@@ -45,15 +45,15 @@ class Sitemap extends CI_Controller {
 	 * More information about sitemap indexes: http://www.sitemaps.org/protocol.html#index
 	 */
 	public function index() {
-		$this->sitemapmodel->add(base_url('sitemap/general'), date('Y-m-d', time()));
-		$this->sitemapmodel->add(base_url('sitemap/articles'), date('Y-m-d', time()));
+		$this->sitemapmodel->add(base_url('general.xml'), date('Y-m-d', time()));
+		$this->sitemapmodel->add(base_url('pincodes.xml'), date('Y-m-d', time()));
 		$this->sitemapmodel->output('sitemapindex');
 	}
 	
 	/**
 	 * Generate a sitemap both based on static urls and an array of urls
 	 */
-	public function home() {
+	public function general() {
 		$this->sitemapmodel->add(base_url(), NULL, 'monthly', 1);
 		$this->sitemapmodel->add(base_url('search-by-place'), NULL, 'monthly', 0.9);
 		$this->sitemapmodel->add(base_url('contact'), NULL, 'yearly', 0.7);
@@ -87,11 +87,11 @@ class Sitemap extends CI_Controller {
 		$query = $this->db->get('pincode_list');
 		$result = $query->result_array();
 		foreach($result as $res){
-
+			$lastmod = $res['lastmod'];
 		$pincode = $res['pincode'];
 		$article = array(
 			'loc' => base_url($pincode),
-			'lastmod' => date('Y-m-d', time()),
+			'lastmod' => $lastmod,
 			'changefreq' => 'monthly',
 			'priority' => 0.8
 		);
