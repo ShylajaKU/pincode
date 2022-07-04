@@ -130,7 +130,7 @@ public function states(){
 
 	$this->db->where('statename_slug',$state);
 	$result = $this->db->get('state_id')->result_array();
-	echo $state_id = $result[0]['state_id'];
+	$state_id = $result[0]['state_id'];
 	// echo $lastmod = $result[0]['lastmod'];
 	$this->state_sitemap_model->state_sitemap_creater_fm($state_id);
 }
