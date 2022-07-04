@@ -89,7 +89,7 @@ class Sitemap extends CI_Controller {
 	public function pincodes(){
 		$this->db->select('pincode');
 		$this->db->select('lastmod');
-		// $this->db->limit(10);
+		$this->db->limit(10000);
 		$query = $this->db->get('pincode_list');
 		$result = $query->result_array();
 		foreach($result as $res){
