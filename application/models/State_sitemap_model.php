@@ -18,6 +18,7 @@ public function state_sitemap_creater_fm($state_id){
 	$this->db->where('total_segments','3');
     $this->db->select('uri_string');
 	$result = $this->db->get('meta')->result_array();
+    echo '<pre>';
 	var_dump($result);
 }
 // --------------------------------------------
