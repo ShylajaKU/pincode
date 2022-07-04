@@ -37,7 +37,7 @@ public function admin(){
 //--------------------------------------------------
 public function add_gk(){
     if(!$this->session->userdata('admin')){redirect(base_url());}
-    $this->form_validation->set_rules('question','Q','required');
+    // $this->form_validation->set_rules('question','Q','required');
     $this->form_validation->set_rules('answer','A','required');
 
     if($this->form_validation->run() == false){
