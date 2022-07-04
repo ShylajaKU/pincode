@@ -32,7 +32,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 50vw;
         margin: auto;
         margin-bottom: 15px;
     }
