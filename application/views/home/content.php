@@ -16,10 +16,31 @@
         overflow: auto;
         padding-left: 25px;
     }
+    .border-gk{
+        
+        box-shadow: 
+        inset 
+            0 -3em 3em rgba(0, 0, 0, 0.1), 
+            0 0 0 2px rgb(255, 255, 255),
+            0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        border-radius: .1cm;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50vw;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
 </style>
 <br><br>
 <div class="container bor">
-
+<section class="border-gk">
+    <h6>Ponder the Question</h6>
+    <p><?= $gk[0]['question'] ?></p>
+</section>
 <section>
 <h5>What is a PIN</h5>
 <p> 

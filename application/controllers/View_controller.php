@@ -35,12 +35,16 @@ public function terms_fc(){
 }//--------------------------------------------------
 public function home_fc(){
 
+    $this->db->limit(1);
+    $this->db->order_by('random_no','random');
+    $query = $this->db->get('gk_qa');
+    $data['gk'] = $query->result_array();
     
     $this->form_validation->set_rules('pincode','Pincode','required');
         if(!$this->form_validation->run()){
         $this->load->view('home/header');
         $this->load->view('home/home');
-        $this->load->view('home/content');
+        $this->load->view('home/content',$data);
         $this->load->view('home/footer');
         }else{
             $pincode = $this->input->post('pincode');
