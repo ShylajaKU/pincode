@@ -52,6 +52,10 @@ class Sitemap extends CI_Controller {
 		$query = $this->db->get('pincode_list')->result_array();
 		$lastmod = $query[0]['lastmod'];
 		$this->sitemapmodel->add(base_url('pincodes.xml'), $lastmod);
+
+		// $result = $this->db->get('state_id')->result_array();
+
+
 		$this->sitemapmodel->output('sitemapindex');
 	}
 	
@@ -85,11 +89,11 @@ class Sitemap extends CI_Controller {
 		}
 		$this->sitemapmodel->output();
 	}
-
+// ----------------------------------------
 	public function pincodes(){
 		$this->db->select('pincode');
 		$this->db->select('lastmod');
-		$this->db->limit(10000);
+		// $this->db->limit(10000);
 		$query = $this->db->get('pincode_list');
 		$result = $query->result_array();
 		foreach($result as $res){
@@ -108,7 +112,12 @@ class Sitemap extends CI_Controller {
 			$article['priority']);
 		}
 		$this->sitemapmodel->output();
-
 	}
 	
+// ----------------------------------------
+
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
+// ----------------------------------------
 }

@@ -13,12 +13,12 @@ $route['ip'] = 'admin_controller/login';
 $route['admin'] = 'admin_controller/admin';
 $route['add-gk-qa'] = 'admin_controller/add_gk';
 
-
+//  sitemapindex and pages
 $route['sitemapindex\.xml'] = 'sitemap/index';
 $route['general\.xml'] = 'sitemap/general';
-// $route['sitemap-art'] = 'sitemap/articles';
 $route['pincodes\.xml'] = 'sitemap/pincodes';
 
+// -----------------------
 
 $route['search-by-place'] = 'view_controller/search_by_place_fc';
 $route['default_controller'] = 'view_controller/home_fc';
