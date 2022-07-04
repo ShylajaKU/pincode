@@ -9,6 +9,11 @@ $route['seo/sitemap\.xml'] = "seo/sitemap";
 $route['site-map'] = 'meta_controller/site_map_fc';
 $route['list-of-all-pincodes-in-india'] = 'view_controller/list_fc';
 
+$route['ip'] = 'admin_controller/login';
+$route['admin'] = 'admin_controller/admin';
+$route['add-gk-qa'] = 'admin_controller/add_gk';
+
+
 $route['sitemap-gen'] = 'sitemap/index';
 $route['sitemap-gene'] = 'sitemap/general';
 $route['sitemap-art'] = 'sitemap/articles';
