@@ -44,8 +44,10 @@
 <div class="container bor">
 <section class="border-gk">
     <h6>Ponder the Question</h6>
-    <p><?= $gk[0]['question'] ?>
-    <button class="btn" onclick="visibile()">&#8595</button></p>
+    <p><?= $gk[0]['question'].' ' ?>
+    <button class="btn" onclick="visibile()"> &#8595</button>
+    <button class="btn" onclick="hide()">&#8593</button></p>
+    
     <p id="answer-1" class="hidden"><?= $gk[0]['answer'] ?></p>
 </section>
 <script>
@@ -53,7 +55,10 @@
         document.getElementById("answer-1").style.visibility = 'visible';
         document.getElementById("answer-1").style.display = 'block';
     }
-
+    function hide(){
+        document.getElementById("answer-1").style.visibility = 'hidden';
+        document.getElementById("answer-1").style.display = 'none';
+    }
 </script>
 <section>
 <h5>What is a PIN</h5>
