@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['contact'] = 'view_controller/contact_fc';
 $route['privacy-policy'] = 'view_controller/privacy_policy_fc';
 $route['terms'] = 'view_controller/terms_fc';
-$route['seo/sitemap\.xml'] = "seo/sitemap";
+// $route['seo/sitemap\.xml'] = "seo/sitemap";
 $route['site-map'] = 'meta_controller/site_map_fc';
 $route['list-of-all-pincodes-in-india'] = 'view_controller/list_fc';
 
@@ -14,9 +14,11 @@ $route['admin'] = 'admin_controller/admin';
 $route['add-gk-qa'] = 'admin_controller/add_gk';
 
 
-$route['sitemap-gen'] = 'sitemap/index';
-$route['sitemap-gene'] = 'sitemap/general';
-$route['sitemap-art'] = 'sitemap/articles';
+$route['sitemap-index'] = 'sitemap/index';
+$route['home\.xml'] = 'sitemap/home';
+// $route['sitemap-art'] = 'sitemap/articles';
+$route['pincode\.xml'] = 'sitemap/pincode';
+
 
 $route['search-by-place'] = 'view_controller/search_by_place_fc';
 $route['default_controller'] = 'view_controller/home_fc';
