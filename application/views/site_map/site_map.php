@@ -38,25 +38,25 @@
 
 // var_dump($this->session->userdata());
 
-$this->db->limit(10);
-$res = $this->db->get('all_india_po_list')->result_array();
-// var_dump($res);
-$sl_no_array = array(); 
-foreach($res as $r){
-    $sl_no = $r['sl_no'];
-    $sl_no_array[] = $sl_no;
-}
-var_dump($sl_no_array);
-// $sl_no_array = array('1','2');
+// $this->db->limit(10);
+// $res = $this->db->get('all_india_po_list')->result_array();
+// // var_dump($res);
+// $sl_no_array = array(); 
+// foreach($res as $r){
+//     $sl_no = $r['sl_no'];
+//     $sl_no_array[] = $sl_no;
+// }
+// var_dump($sl_no_array);
+// // $sl_no_array = array('1','2');
 
-foreach($sl_no_array as $sl_no){
-    $this->db->where('sl_no',$sl_no);
-    $this->db->select('visiter_count');
-    $visiter_count = $this->db->get('all_india_po_list')->result_array()[0]['visiter_count'];
+// foreach($sl_no_array as $sl_no){
+//     $this->db->where('sl_no',$sl_no);
+//     $this->db->select('visiter_count');
+//     $visiter_count = $this->db->get('all_india_po_list')->result_array()[0]['visiter_count'];
     
-    $data = array(
-        'visiter_count' => $visiter_count + 1,
-    );
-    $this->db->where('sl_no',$sl_no);
-    $this->db->update('all_india_po_list',$data);
-}
+//     $data = array(
+//         'visiter_count' => $visiter_count + 1,
+//     );
+//     $this->db->where('sl_no',$sl_no);
+//     $this->db->update('all_india_po_list',$data);
+// }
