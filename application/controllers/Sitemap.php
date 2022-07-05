@@ -73,6 +73,9 @@ class Sitemap extends CI_Controller {
 		$this->sitemapmodel->add(base_url('contact'), NULL, 'yearly', 0.7);
 		$this->sitemapmodel->add(base_url('privacy-policy'), NULL, 'yearly', 0.7);
 		$this->sitemapmodel->add(base_url('terms'), NULL, 'yearly', 0.7);
+		$this->sitemapmodel->add(base_url('list-of-all-pincodes-in-india'), NULL, 'monthly', 0.9);
+		
+
 
 		// foreach ($this->articles as $article) {
 		// 	$this->sitemapmodel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);

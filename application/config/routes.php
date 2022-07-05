@@ -6,7 +6,7 @@ $route['contact'] = 'view_controller/contact_fc';
 $route['privacy-policy'] = 'view_controller/privacy_policy_fc';
 $route['terms'] = 'view_controller/terms_fc';
 // $route['seo/sitemap\.xml'] = "seo/sitemap";
-$route['site-map'] = 'meta_controller/site_map_fc';
+$route['test'] = 'meta_controller/site_map_fc';
 $route['list-of-all-pincodes-in-india'] = 'view_controller/list_fc';
 
 $route['ip'] = 'admin_controller/login';
