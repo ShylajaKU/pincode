@@ -93,6 +93,42 @@
             echo 'Latitude : ' .$row['latitude'] .'<br>';
         }
         ?>
+
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> -->
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+ 
+<!-- <form action="" id="likes" method="post">
+<span id="up_no">
+    <?php $up = 1; ?>
+<?= $up ?>
+<input type="number" value="1" hidden>
+<span class="material-icons-outlined" style="color:blue ;" onclick="up(1)" id="thumb_up">
+thumb_up
+</span>
+
+123
+<button type="submit" class="btn">
+
+<span class="material-icons-outlined" style="color:blue ;">
+thumb_down
+</span>
+</button>
+</span>
+</form>    
+
+<script>
+    function up(a){
+        var a = a;
+        document.getElementById('likes').submit();
+        document.getElementById('up_no').writeText('1');
+    }
+</script> -->
+
+
+
+
+
+
 </div>
 <br>
 <div class="container cont bord relative">
@@ -138,3 +174,4 @@
   alert("Copied the text: " + copyText.value);
 }
 </script>
+

@@ -81,6 +81,12 @@ if(!$is_pincode_true){
     $data['valid_pincode'] = true;
     $table_rows = $this->get_model->get_specific_rows_fm($value,$value_col_name,$table_name);
     $data['table_rows'] = $table_rows;
+    $sl_no_array = array(); 
+    foreach($table_rows as $r){
+        $sl_no = $r['sl_no'];
+        $sl_no_array[] = $sl_no;
+    }
+    $this->update_model->visiter_counter_all_india_po_list_fm($sl_no_array);
     // var_dump($table_rows);
     $this->load->view('home/header');
     $this->load->view('home/home');
@@ -327,6 +333,17 @@ $this->db->limit(1);
 $this->db->order_by('random_no','random');
 $query = $this->db->get('gk_qa');
 $data['gk'] = $query->result_array();
+
+
+$sl_no_array = array(); 
+foreach($pincode_row as $r){
+    $sl_no = $r['sl_no'];
+    $sl_no_array[] = $sl_no;
+}
+$this->update_model->visiter_counter_all_india_po_list_fm($sl_no_array);
+
+
+
 
 $this->load->view('home/header');
 $this->load->view('home/search_by_place',$data);
