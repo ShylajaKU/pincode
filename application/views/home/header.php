@@ -25,7 +25,6 @@
     ?>
 
 
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="shortcut icon" href="<?= base_url('assets/favicon/favicon16.png')?>" type="image/png">
 
 <link rel="stylesheet" href="<?= base_url('assets\css\bootstrap.min.css')?>">
@@ -38,7 +37,6 @@
 
 <body>
 
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?= base_url()?>">pincodes.ind.in</a>
