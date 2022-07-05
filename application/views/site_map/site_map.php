@@ -60,3 +60,16 @@
 //     $this->db->where('sl_no',$sl_no);
 //     $this->db->update('all_india_po_list',$data);
 // }
+
+
+echo rand(159,1352);
+$query = $this->db->get('all_india_po_list');
+echo $no = $query->num_rows();
+for($i = 1; $i <= $no; $i++){
+$data = array(
+    'random_h' => rand(159,1352),
+);
+$this->db->where('sl_no',$no);
+$this->db->update('all_india_po_list',$data);
+}
+?>

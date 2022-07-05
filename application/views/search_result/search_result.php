@@ -92,7 +92,11 @@
         if($row['latitude'] != 'NA'){
             echo 'Latitude : ' .$row['latitude'] .'<br>';
         }
+        if($row['visiter_count'] >= '0'){
+            echo 'No of times searched : ' .$row['visiter_count'] .'<br>';
+        }
         ?>
+
 
         <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> -->
         <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
