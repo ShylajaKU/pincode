@@ -61,15 +61,23 @@
 //     $this->db->update('all_india_po_list',$data);
 // }
 
-
-echo rand(159,1352);
+$this->db->where('random_h','0');
 $query = $this->db->get('all_india_po_list');
 echo $no = $query->num_rows();
-for($i = 1; $i <= $no; $i++){
-$data = array(
-    'random_h' => rand(159,1352),
-);
-$this->db->where('sl_no',$no);
-$this->db->update('all_india_po_list',$data);
+
+$run = ceil($no/2000);
+for($j = 0;$j<$run;$j++){
+    $this->db->limit(2000,$j*2000);
+
+$result = $query->result_array();
+foreach($result as $res){
+    $sl_no = $res['sl_no'];
+    $data = array(
+        'random_h' => rand(159,1352),
+    );
+    $this->db->where('sl_no',$sl_no);
+    $this->db->update('all_india_po_list',$data);
+}
+
 }
 ?>
