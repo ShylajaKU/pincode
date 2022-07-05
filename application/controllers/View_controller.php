@@ -63,12 +63,13 @@ $value_col_name = 'pincode';
 $table_name = 'all_india_po_list';
 $is_pincode_true = $this->get_model->check_a_value_present_fm($value,$value_col_name,$table_name);
 $this->form_validation->set_rules('pincode','Pincode','required');
+$this->db->limit(1);
+$this->db->order_by('random_no','random');
+$query = $this->db->get('gk_qa');
+$data['gk'] = $query->result_array();
+
 if(!$this->form_validation->run()){
-    $this->db->limit(1);
-    $this->db->order_by('random_no','random');
-    $query = $this->db->get('gk_qa');
-    $data['gk'] = $query->result_array();
-    
+
 if(!$is_pincode_true){
     $data['valid_pincode'] = false;
     $this->load->view('home/header');
