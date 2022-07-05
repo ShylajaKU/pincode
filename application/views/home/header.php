@@ -61,7 +61,7 @@
           <a class="nav-link" href="<?= base_url('terms')?>">Terms</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  tabindex="-1" aria-disabled="true">	&#169 2022 pincodes.ind.in</a>
+          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">	&#169 2022 pincodes.ind.in</a>
         </li>
       </ul>
     </div>
