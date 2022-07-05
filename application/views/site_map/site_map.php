@@ -61,9 +61,9 @@
 //     $this->db->update('all_india_po_list',$data);
 // }
 
-// $this->db->where('random_h','0');
-// $query = $this->db->get('all_india_po_list');
-// echo $no = $query->num_rows();
+$this->db->where('random_h','0');
+$query = $this->db->get('all_india_po_list');
+echo $no = $query->num_rows();
 
 // $run = ceil($no/10000);
 // for($j = 0; $j < $run ;$j++){
