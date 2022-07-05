@@ -66,9 +66,10 @@ $query = $this->db->get('all_india_po_list');
 echo $no = $query->num_rows();
 
 $run = ceil($no/10000);
-for($j = 0;$j<$run;$j++){
+for($j = 0;$j<1;$j++){
     $this->db->limit(10000,$j*10000);
 $this->db->select('sl_no');
+$this->db->where('random_h','0');
 $result = $query->result_array();
 foreach($result as $res){
     $sl_no = $res['sl_no'];
