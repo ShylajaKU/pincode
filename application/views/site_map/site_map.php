@@ -67,7 +67,7 @@ echo $no = $query->num_rows();
 
 $run = ceil($no/10000);
 for($j = 0; $j < $run ;$j++){
-    $this->db->limit(1000);
+    $this->db->limit(10000);
 $this->db->select('sl_no');
 $this->db->where('random_h','0');
 $query = $this->db->get('all_india_po_list');
@@ -82,3 +82,7 @@ foreach($result as $res){
 }
 
 }
+
+$this->db->where('random_h','0');
+$query = $this->db->get('all_india_po_list');
+echo $no = $query->num_rows();
