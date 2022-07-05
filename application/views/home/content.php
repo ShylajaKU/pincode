@@ -42,13 +42,12 @@
 </style>
 <br><br>
 <div class="container bor">
-<?php if($gk): ?>
+<?php if(!empty($gk)): ?>
 <section class="border-gk">
     <h6>Ponder the Question</h6>
     <p><?= $gk[0]['question'].' ' ?>
     <button class="btn" onclick="visibile()"> &#8595</button>
     <button class="btn" onclick="hide()">&#8593</button></p>
-    
     <p id="answer-1" class="hidden"><?= $gk[0]['answer'] ?></p>
 </section>
 <script>
