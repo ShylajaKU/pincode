@@ -92,7 +92,9 @@
         if($row['latitude'] != 'NA'){
             echo 'Latitude : ' .$row['latitude'] .'<br>';
         }
-        if($row['visiter_count'] >= '0'){
+        if($row['visiter_count'] < '5689'){
+            echo 'No of times searched : ' .($row['visiter_count']+$row['random_h']) .'<br>';
+        }else{
             echo 'No of times searched : ' .$row['visiter_count'] .'<br>';
         }
         ?>
