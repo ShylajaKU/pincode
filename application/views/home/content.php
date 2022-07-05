@@ -42,6 +42,7 @@
 </style>
 <br><br>
 <div class="container bor">
+<?php if($gk): ?>
 <section class="border-gk">
     <h6>Ponder the Question</h6>
     <p><?= $gk[0]['question'].' ' ?>
@@ -60,6 +61,8 @@
         document.getElementById("answer-1").style.display = 'none';
     }
 </script>
+
+<?php endif; ?>
 <section>
 <h5>What is a PIN</h5>
 <p> 
