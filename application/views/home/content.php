@@ -106,11 +106,9 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 <!-- <section>
     <a href="<?= base_url('list-of-all-pincodes-in-india');?>">View List of Post Offices</a>
 </section> -->
-
+<?php $state_names = $this->db->get('state_id')->result_array(); ?>
 <section>
     <h5>View the list of all the post offices in each state</h5>
-
-    <?php //var_dump($state_names)?>
     <ol>
     <?php foreach($state_names as $st): ?>
         <li>
