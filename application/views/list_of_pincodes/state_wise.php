@@ -35,11 +35,11 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>Sl No</th>
-    <th>State</th>
-    <th>District</th>
-    <th>Taluk</th>
-    <th>Post Office Name</th>
     <th>PIN Code</th>
+    <th>Post Office Name</th>
+    <th>Taluk</th>
+    <th>District</th>
+    <th>State</th>
     <th>Link</th>
   </tr>
 
@@ -47,11 +47,11 @@ tr:nth-child(even) {
     <?php $uri = $uri_string_array[$i] ?>
   <tr>
     <td><?= ($i + 1) ?></td>
-    <td><?= ucwords(strtolower($uri['statename']))?></td>
-    <td><?= $uri['Districtname']?></td>
-    <td><?= $uri['Taluk']?></td>
-    <td><?= $uri['officename']?></td>
     <td><?= $uri['pincode']?></td>
+    <td><?= $uri['officename']?></td>
+    <td><?= $uri['Taluk']?></td>
+    <td><?= $uri['Districtname']?></td>
+    <td><?= ucwords(strtolower($uri['statename']))?></td>
     <td>
         <a href="<?= base_url($uri['uri_string'])?>" target="_blank" rel="noopener noreferrer"><?= $uri['uri_string']?></a>
     </td>
