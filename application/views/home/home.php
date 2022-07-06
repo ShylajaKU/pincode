@@ -6,3 +6,9 @@
     <?= form_close()?>
     </div>
 
+<br>
+<div class="container cont">
+<script async src="https://cse.google.com/cse.js?cx=018225066591610649879:zin6d81q8ec"></script>
+<div class="gcse-searchbox"></div>
+<div class="gcse-searchresults"></div>
+</div>
