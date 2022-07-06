@@ -103,9 +103,24 @@ If a Sub Office also handles mail deliveries then that will have another PIN cod
 </p>
 </section>
 <br>
-<section>
+<!-- <section>
     <a href="<?= base_url('list-of-all-pincodes-in-india');?>">View List of Post Offices</a>
+</section> -->
+
+<section>
+    <h5>View the list of all the post offices in each state</h5>
+
+    <?php //var_dump($state_names)?>
+    <ol>
+    <?php foreach($state_names as $st): ?>
+        <li>
+        <a href="<?= base_url();?>list-of-all-pincodes-state-wise/<?= $st['statename_slug'];?>" target="_blank" rel="noopener noreferrer"><?= $st['statename']?></a>
+        </li>
+    <?php endforeach; ?>
+    </ol>
 </section>
 
 </div>
 <br><br>
+
+

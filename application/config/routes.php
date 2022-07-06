@@ -8,6 +8,8 @@ $route['terms'] = 'view_controller/terms_fc';
 // $route['seo/sitemap\.xml'] = "seo/sitemap";
 $route['test'] = 'meta_controller/site_map_fc';
 $route['list-of-all-pincodes-in-india'] = 'view_controller/list_fc';
+$route['list-of-all-pincodes-state-wise'] = 'meta_controller/list_of_states_fc';
+$route['list-of-all-pincodes-state-wise/(:any)'] = 'meta_controller/list_of_all_pincodes_state_wise_fc';
 
 $route['ip'] = 'admin_controller/login';
 $route['admin'] = 'admin_controller/admin';

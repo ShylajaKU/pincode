@@ -108,7 +108,7 @@ public function search_by_place_fc(){
     $data['gk'] = $query->result_array();
 
     $table_name = 'state_id';
-    $select = array('state_id','statename');
+    $select = array('state_id','statename','statename_slug');
     $state_names = $this->get_model->get_selected_data_fm($table_name,$select);
     // var_dump($state_names);
     $data['state_names'] = $state_names;
