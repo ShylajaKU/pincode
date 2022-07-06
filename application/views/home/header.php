@@ -19,7 +19,7 @@
     <?php
     $description = $this->meta_model->get_meta_description_fm($this->uri->uri_string());
     if($description == ''){
-      $description = 'Find any pincodes or post offices of Inaia';
+      $description = 'Find any pincodes or post offices in India';
     }
     echo '<meta name="description" content="'.$description. '">';
     ?>

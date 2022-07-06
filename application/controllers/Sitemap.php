@@ -58,9 +58,8 @@ class Sitemap extends CI_Controller {
 			$statename_slug = $state['statename_slug'];
 			$lastmod = $state['lastmod'];
 		$this->sitemapmodel->add(base_url('sitemap/'.$statename_slug.'.xml'), $lastmod);
-
-
 		}
+
 		$this->sitemapmodel->output('sitemapindex');
 	}
 	
@@ -75,7 +74,12 @@ class Sitemap extends CI_Controller {
 		$this->sitemapmodel->add(base_url('terms'), NULL, 'yearly', 0.7);
 		$this->sitemapmodel->add(base_url('list-of-all-pincodes-in-india'), NULL, 'monthly', 0.9);
 		
-
+$result = $this->db->get('state_id')->result_array();
+		foreach($result as $state){
+			$statename_slug = $state['statename_slug'];
+			$lastmod = $state['lastmod'];
+		$this->sitemapmodel->add(base_url('list-of-all-pincodes-state-wise/'.$statename_slug), $lastmod);
+		}
 
 		// foreach ($this->articles as $article) {
 		// 	$this->sitemapmodel->add($article['loc'], $article['lastmod'], $article['changefreq'], $article['priority']);
