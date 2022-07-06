@@ -39,7 +39,7 @@ tr:nth-child(even) {
     <th>Post Office Name</th>
     <th>Taluk</th>
     <th>District</th>
-    <th>State</th>
+    <!-- <th>State</th> -->
     <th>Link</th>
   </tr>
 
@@ -51,7 +51,7 @@ tr:nth-child(even) {
     <td><?= $uri['officename']?></td>
     <td><?= $uri['Taluk']?></td>
     <td><?= $uri['Districtname']?></td>
-    <td><?= ucwords(strtolower($uri['statename']))?></td>
+    <!-- <td><?= ucwords(strtolower($uri['statename']))?></td> -->
     <td>
         <a href="<?= base_url($uri['uri_string'])?>" target="_blank" rel="noopener noreferrer"><?= $uri['uri_string']?></a>
     </td>
