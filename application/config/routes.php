@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+$route['treasure-hunt'] = 'treasure_controller/enter_your_email_fc';
+$route['questionnaire'] = 'meta_controller/qa_fc';
+
+
 // $route['default_controller'] = 'welcome';
 $route['contact'] = 'view_controller/contact_fc';
 $route['privacy-policy'] = 'view_controller/privacy_policy_fc';

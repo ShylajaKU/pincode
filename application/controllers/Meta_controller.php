@@ -89,6 +89,12 @@ public function list_of_all_pincodes_state_wise_fc(){
 
 }
 //--------------------------------------------------
+public function qa_fc(){
+    $this->load->view('home/header');
+    $this->load->view('questionnaire/qa');
+    $this->load->view('home/footer');
+
+}
 //--------------------------------------------------
 //--------------------------------------------------
 //--------------------------------------------------
